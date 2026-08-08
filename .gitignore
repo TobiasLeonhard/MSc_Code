@@ -1,0 +1,23 @@
+# Environment
+environment/
+
+# Data
+data/
+manual_input_data/
+
+# GPR Analysis
+gpr_analysis/
+
+# Results
+results/
+
+# QGIS output
+Mapping Frost Table Depth and Soil Moisture in an Ice-Wedge Polygon - A Case Study/map_generation/Final Maps/*
+Mapping the Distribution of Mineral Earth Hummocks/map_generation/Final Maps/*
+
+
+# Pycache
+__pycache__/
+
+# VS code Settings
+.vscode/
