@@ -9,7 +9,11 @@
 """
 vegetation_mapping.py
 
-This file runs the vegetation classificaiton
+This script produces a vegetation classification map for the study area using 2023 aerial imagery and
+training polygons from field-based vegetation surveys.
+It merges overlapping image products to a common resolution and projection, trains a Random Forest classifier, and
+applies the model across the study site to generate a spatial map of vegetation classes.
+The resulting classification is used to compare vegetation cover with mapped mineral earth hummocks.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -24,6 +28,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.vegetation_mapping import VegetationClassifier
 from utility_functions.combine_tifs import get_combined_raster

@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.dtm_calculations import get_mean_elevation, get_smoothed_diff, get_thresholded_map, get_slope_map
 from utility_functions.geo_vector_file_operations import polygonize_raster_to_vector

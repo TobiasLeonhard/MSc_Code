@@ -7,7 +7,7 @@
 # #       # #      # #     #   #####
 # Arctic Hydrology Research Group - Wilfrid Laurier University
 """
-gpr_handling.py
+gpr_handling_hum_prj.py
 
 This file handles the GPR processing for easier reading.
 
@@ -24,9 +24,10 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
-from utility_functions.gpr_processing import load_data_for_hummock_detection
-from utility_functions.gpr_plotting import plot_hummock_detection_transect
+from utility_functions.gpr_processing_hum_prj import load_data_for_hummock_detection
+from utility_functions.gpr_plotting_hum_prj import plot_hummock_detection_transect
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 def plot_hummock_detection(file: Path, used_rasters: dict, dpi: int) -> None:

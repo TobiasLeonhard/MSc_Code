@@ -9,7 +9,9 @@
 """
 gpr_analysis.py
 
-This file organizes the GPR analysis
+This script prepares and visualizes GPR reflection pick-line data alongside mapped mineral earth hummocks and aerial imagery.
+It overlays hummock maps with radar transects and produces figures for interpretation of hummock-related subsurface structure and moisture conditions.
+The resulting plots support comparison between topographic hummock mapping and ground-based geophysical observations.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -24,8 +26,9 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
-from utility_functions.gpr_handling import plot_hummock_detection
+from utility_functions.gpr_handling_hum_prj import plot_hummock_detection
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 if __name__ == "__main__":

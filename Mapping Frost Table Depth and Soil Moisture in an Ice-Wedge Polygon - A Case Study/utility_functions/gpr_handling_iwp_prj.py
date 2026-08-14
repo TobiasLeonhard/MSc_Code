@@ -7,7 +7,7 @@
 # #       # #      # #     #   #####
 # Arctic Hydrology Research Group - Wilfrid Laurier University
 """
-gpr_handling.py
+gpr_handling_iwp_prj.py
 
 This file handles the GPR processing for easier reading.
 
@@ -23,10 +23,11 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_folder))
+from config.environment_iwp_prj import *
 from config.environment import *
 from utility_functions.python_to_latex import export_to_latex
-from utility_functions.gpr_processing import load_data_for_iwp_transect, load_iwp_gdfs
-from utility_functions.gpr_plotting import plot_transect_wise_in_IWP_setting, plot_subtransect_of_IWP_transect, plot_whole_iwp_figure
+from utility_functions.gpr_processing_iwp_prj import load_data_for_iwp_transect, load_iwp_gdfs
+from utility_functions.gpr_plotting_iwp_prj import plot_transect_wise_in_IWP_setting, plot_subtransect_of_IWP_transect, plot_whole_iwp_figure
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 def plot_iwp_transect_wise(file: Path, used_rasters: dict, used_velocities_m_ns: dict, used_velocities_for_plotting_m_ns: dict, classification_thresholds: dict, dpi: int) -> None:

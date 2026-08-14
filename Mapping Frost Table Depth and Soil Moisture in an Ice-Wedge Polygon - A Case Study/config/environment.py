@@ -9,14 +9,16 @@
 """
 environment.py
 
-This environment file imports and organizes all packages.
-Additionally, it defines paths for the project.
+This configuration file establishes the computational environment for the mineral earth hummock mapping project.
+It imports required libraries, sets the project directory structure, initializes geospatial and plotting tools, and defines shared settings used by all downstream analysis scripts.
+The file ensures reproducibility and consistent access to data, results, and processing resources across the workflow.
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ==================================================================================================== #
 # Standard Libraries
@@ -55,7 +57,6 @@ import warnings
 import xml.etree.ElementTree as ET
 # ---------------------------------------------------------------------------------------------------- #
 
-
 # ==================================================================================================== #
 # Third-Party Libraries
 # ---------------------------------------------------------------------------------------------------- #
@@ -76,6 +77,7 @@ import matplotlib as mpl
 import matplotlib.axes
 from matplotlib.collections import LineCollection
 from matplotlib.colors import Normalize, ListedColormap
+from matplotlib.colors import LinearSegmentedColormap
 import matplotlib.gridspec as gridspec
 from matplotlib.lines import Line2D
 import matplotlib.pyplot as plt
@@ -110,9 +112,6 @@ from rasterio.windows import Window
 # Rioxarray
 import rioxarray
 # ---------------------------------------------------------------------------------------------------- #
-# Scikit posthocs
-import scikit_posthocs as sp
-# ---------------------------------------------------------------------------------------------------- #
 # Scipy
 import scipy
 from scipy.constants import speed_of_light
@@ -125,10 +124,6 @@ import segyio
 # ---------------------------------------------------------------------------------------------------- #
 # Shapely
 from shapely.geometry import Point, LineString
-#, shape
-# ---------------------------------------------------------------------------------------------------- #
-# Sklearn
-from sklearn.metrics import cohen_kappa_score
 # ---------------------------------------------------------------------------------------------------- #
 # Whitebox
 import whitebox
@@ -150,15 +145,13 @@ if "project_path" not in globals():
     coding_folder = Path(__file__).resolve().parent.parent
     data_folder = coding_folder / "data"
     results_folder = coding_folder / "results"
+    final_maps_folder = coding_folder / "map_generation" / "Final Maps"
     dtm_calculations_folder =  results_folder / "dtm_calculations"
     manual_input_folder = coding_folder / "manual_input_data"
-    if not manual_input_folder.exists():
-        raise FileNotFoundError("Manual input data not found.")
-    if not data_folder.exists():
-        raise FileNotFoundError("Data not found.")
 
     # Create Folders
     data_folder.mkdir(exist_ok = True)
+    final_maps_folder.mkdir(exist_ok = True, parents = True)
     results_folder.mkdir(exist_ok = True)
     dtm_calculations_folder.mkdir(exist_ok = True)
 

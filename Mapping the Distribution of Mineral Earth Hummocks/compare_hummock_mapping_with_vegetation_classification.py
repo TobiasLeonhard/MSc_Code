@@ -9,8 +9,10 @@
 """
 compare_hummock_mapping_with_vegetation_classification.py
 
-This file handles all hummock mapping processes.
-It creates different hummock maps using the DTM from the KBM LIDAR campaing 2024
+This script evaluates the relationship between mapped mineral earth hummocks and vegetation classes
+by combining hummock and vegetation rasters, comparing their spatial overlap, and calculating the proportion
+of each vegetation class within mapped hummock areas relative to the broader vegetation cover.
+Results are summarized in a tabular output for interpretation and publication.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -25,6 +27,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.combine_tifs import get_combined_raster
 from utility_functions.python_to_latex import export_to_latex

@@ -1,0 +1,9 @@
+Data availability:
+Data downloaded from https://www.geomatics.gov.nt.ca/en/nwt-highway-distance-markers
+More information available on https://open.canada.ca/data/en/dataset/c9f49f4a-108b-5c52-4ae9-e57edf2f21a3
+
+Further processing:
+Selection of Dempster and Inuvik-Tuktoyaktuk Highway, then connected by QGIS using the Points to Path tool.
+
+Last time accessed data:
+2026-08-13

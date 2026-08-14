@@ -15,6 +15,14 @@ results/
 Mapping Frost Table Depth and Soil Moisture in an Ice-Wedge Polygon - A Case Study/map_generation/Final Maps/*
 Mapping the Distribution of Mineral Earth Hummocks/map_generation/Final Maps/*
 
+# External data tests
+doi-10.5683-sp3-bxv4de/
+meteorological data/
+active layer data/
+drone-based aerial imagery/
+gpr survey/
+lidar-derived dtms/
+utility functions/
 
 # Pycache
 __pycache__/

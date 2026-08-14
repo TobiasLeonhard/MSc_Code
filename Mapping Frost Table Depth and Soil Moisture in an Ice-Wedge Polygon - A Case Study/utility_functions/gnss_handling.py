@@ -11,11 +11,12 @@ gnss_handling.py
 
 This file contains functions for handling gnss data
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

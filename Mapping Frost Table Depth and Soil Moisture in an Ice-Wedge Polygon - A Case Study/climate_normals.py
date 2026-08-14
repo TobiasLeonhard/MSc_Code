@@ -9,156 +9,97 @@
 """
 climate_normals.py
 
-This file contains functions for handling the climate normals.
+Utility functions for climate normals
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
-Created: 2026
+Created: 2025
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #
 import sys
 from pathlib import Path
-parent_folder = Path(__file__).resolve().parent
+parent_folder = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_folder))
 from config.environment import *
-from utility_functions.climate_normals import flatten_columns, rename_monthly_columns, load_tvc_gap_filled_data
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
-if __name__ == "__main__":
-    print("# ====================================================================================================================================================== #")
-    print("climate_normals.py started")
-    # Define output file name
-    output_filename = results_folder / "climate_normals" / Path("TVC_climate_normals").with_suffix(".png")
-    output_filename.parent.mkdir(exist_ok = True)
+def flatten_columns(df: pd.DataFrame, column_fill: str) -> pd.DataFrame:
+	"""
+	Flattens multi-level column names in a DataFrame by joining the levels with a specified string.
 
-    # Define plotting colors
-    temp_color = "tab:red"
-    precipitation_color = "tab:blue"
+	Args:
+		df - pd.DataFrame: Input DataFrame with multi-level columns (e.g., from groupby aggregation).
+		column_fill - str: String to insert between parts of the column name.
+
+	Returns:
+		flat_df = pd.DataFrame: DataFrame with flattened column names.
+	"""
+	flat_df = df.copy()
+	flat_df.columns = ['Date'] + [f"{col[0]}_{column_fill}_{col[1]}" for col in flat_df.columns[1:]]
+	return flat_df
+
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+def rename_monthly_columns(col: str) -> str | None:
+    """
+    Rename columns according to the specified pattern
+
+    Args:
+        col - str: Col to rename
+
+    Returns:
+        ren_col - str: renamed col
+    """
+    # Handle Date column
+    if col == "Date":
+        return col
+
+    # Extract the variable prefix
+    parts = col.split("_")
+    var = parts[0]
+
+    # Pre-calculate counts to make logic cleaner
+    mean_count = col.count("mean")
+    sum_count = col.count("sum")
+    min_count = col.count("min")
+    max_count = col.count("max")
+
+    # Pattern matching
+    if mean_count == 2:
+        return f"{var}_monthly_mean"
+    elif sum_count == 2:
+        return f"{var}_monthly_sum"
+    elif min_count == 2:
+        return f"{var}_monthly_extreme_min"
+    elif max_count == 2:
+        return f"{var}_monthly_extreme_max"
+    elif min_count == 1 and mean_count == 1:
+        return f"{var}_monthly_min"
+    elif max_count == 1 and mean_count == 1:
+        return f"{var}_monthly_max"
+
+    # Otherwise: Return None
+    return None
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
+def load_tvc_gap_filled_data() -> pd.DataFrame:
+    """
+    Checks whether data is available and if not raises error with information where to find it
+    Args:
+
+    Returns:
+        climate_data - pd.DataFrame
+    """
 
     # Load data
-    climate_data = load_tvc_gap_filled_data()
-    # Remove whitespace
-    climate_data.columns = climate_data.columns.str.strip()
-    # Enforce every column to be numerical
-    climate_data = climate_data.astype(float)
-    # Check for existing columns
-    cols_to_check = ["Year", "Month", "Day", "Hour", "Tair", "Snowfall", "Rainfall"]
-    # Returns True only if ALL are present
-    is_present = set(cols_to_check).issubset(climate_data.columns)
-    if is_present == False:
-        missing_cols = set(cols_to_check) - set(climate_data.columns)
-        raise ValueError(f"Could not find the following columns: {missing_cols}")
-    # Add Date column
-    climate_data["Date"] = pd.to_datetime(
-        pd.DataFrame({
-            "year": climate_data["Year"],
-            "month": climate_data["Month"],
-            "day": climate_data["Day"],
-            "hour": climate_data["Hour"]
-                }
-            )
-        )
-    # Select climate normal subset
-    climate_data = climate_data[climate_data["Date"].between("1991-09-01 00:00", "2020-08-31 23:59:59")]
-    # Convert Tair from Kelvin to Celsius
-    climate_data["Tair"] = climate_data["Tair"] - 273.15
-    # Add precipitations together and convert from kg/m²/s to mm/hr
-    climate_data["Precipitation"] = climate_data["Snowfall"] + climate_data["Rainfall"]
-    climate_data["Precipitation"] = climate_data["Precipitation"] * 3600
+    data_path = data_folder / "tvc_data" / "meteorology" / Path("TVC_Gapfilled_Met_1991-2023").with_suffix(".xlsx")
+    if data_path.exists():
+        climate_data = pd.read_excel(data_path, sheet_name = "Gapfilled_Met")
+    else:
+        raise FileNotFoundError(f"The file {data_path.name} was not found, please download it from 'https://doi.org/10.5683/SP3/BXV4DE'.")
 
-    # Group on daily basis and flatten the column
-    climate_data_grp_daily = climate_data.set_index("Date").resample("D").agg(
-        {
-            "Tair": ["mean", "min", "max"],
-            "Precipitation": ["sum"]
-            }
-        ).reset_index()
-    climate_data_grp_daily = flatten_columns(
-        df = climate_data_grp_daily,
-        column_fill = "daily"
-        )
+    return climate_data
 
-    # Now group the flatten daily group on monthly basis and flatten the column
-    climate_data_grp_monthly = climate_data_grp_daily.set_index("Date").resample("ME").agg(
-        {
-            "Tair_daily_mean": ["mean"],
-            "Tair_daily_min": ["mean", "min"],
-            "Tair_daily_max": ["mean", "max"],
-            "Precipitation_daily_sum": ["sum"]
-            }
-        ).reset_index()
-    climate_data_grp_monthly = flatten_columns(
-        df = climate_data_grp_monthly,
-        column_fill = "monthly"
-        )
-
-    # Rename the columns for easier handling and drop unwanted
-    new_cols = [rename_monthly_columns(c) for c in climate_data_grp_monthly.columns]
-    keep_cols = [c for c in new_cols if c is not None]
-    climate_data_grp_monthly = climate_data_grp_monthly.loc[:, [c for c, nc in zip(climate_data_grp_monthly.columns, new_cols) if nc is not None]]
-    climate_data_grp_monthly.columns = keep_cols
-
-    # Group by month and calculate mean for each column
-    climate_data_grp_monthly["Month"] = climate_data_grp_monthly["Date"].dt.month
-    climate_normals = climate_data_grp_monthly.groupby("Month").mean(numeric_only=True).reset_index()
-
-    # Plot climate normals: temperature (mean, min, max) and precipitation by month
-    months = [calendar.month_abbr[m] for m in climate_normals["Month"]]
-    fig, ax1 = plt.subplots(figsize=(10, 6))
-
-    month_index = range(len(months))
-    # Add temperature lines and temperature envelope
-    ax1.fill_between(
-        months,
-        climate_normals["Tair_monthly_min"],
-        climate_normals["Tair_monthly_max"],
-        color = temp_color,
-        alpha = 0.2,
-        label = "Temperature Range (Min-Max)"
-        )
-
-    # Add mean temperature line
-    ax1.plot(
-        months,
-        climate_normals["Tair_monthly_mean"],
-        label = "Mean Temperature (°C)",
-        color = temp_color,
-        marker = "o"
-        )
-
-    # Add precipitation bar on right y-axis
-    ax2 = ax1.twinx()
-    ax2.bar(
-        months,
-        climate_normals["Precipitation_monthly_sum"],
-        label = "Precipitation (mm)",
-        color = precipitation_color,
-        alpha = 0.3
-        )
-
-    # Handle axis labels, legend, title and layout
-    ax1.set_xlabel("Month")
-    ax1.set_ylabel("Temperature (°C)", color = temp_color)
-    ax2.set_ylabel("Precipitation (mm)", color = precipitation_color)
-    handles1, labels1 = ax1.get_legend_handles_labels()
-    handles2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(handles1 + handles2, labels1 + labels2, loc="upper left")
-    plt.title("Climate Normals (1991-2020) - Trail Valley Creek")
-    plt.tight_layout()
-
-    # Save and close file
-    plt.savefig(output_filename, dpi = DPI)
-    plt.close()
-
-    print("Climate normals saved successfully.")
-    print(f"Maximal monthly mean temperature: {climate_normals['Tair_monthly_mean'].max()}°C.")
-    print(f"Mean monthly mean temperature: {climate_normals['Tair_monthly_mean'].mean()}°C.")
-    print(f"Minimal monthly mean temperature: {climate_normals['Tair_monthly_mean'].min()}°C.")
-    print(f"Maximal monthly summed precipitaiton: {climate_normals['Precipitation_monthly_sum'].max()}°C.")
-    print(f"Mean monthly summed precipitaiton: {climate_normals['Precipitation_monthly_sum'].mean()}°C.")
-    print(f"Minimal monthly summed precipitaiton: {climate_normals['Precipitation_monthly_sum'].min()}°C.")
-    print("\nclimate_normals.py finished.")
-    print("# ====================================================================================================================================================== #")
+# ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

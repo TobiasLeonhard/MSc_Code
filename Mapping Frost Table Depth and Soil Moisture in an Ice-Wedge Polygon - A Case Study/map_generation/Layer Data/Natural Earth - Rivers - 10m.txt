@@ -1,0 +1,10 @@
+Data availability:
+Data downloaded from https://www.naturalearthdata.com/downloads/10m-physical-vectors/10m-rivers-lake-centerlines/
+
+Used Version: Version 5.0.0
+
+Further processing:
+Selection of the wanted rivers. Then CRS transformation.
+
+Last time accessed data:
+2026-08-13

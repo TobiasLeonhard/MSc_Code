@@ -9,8 +9,9 @@
 """
 environment.py
 
-This environment file imports and organizes all packages.
-Additionally, it defines paths for the project.
+This configuration file establishes the computational environment for the mineral earth hummock mapping project.
+It imports required libraries, sets the project directory structure, initializes geospatial and plotting tools, and defines shared settings used by all downstream analysis scripts.
+The file ensures reproducibility and consistent access to data, results, and processing resources across the workflow.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -59,9 +60,6 @@ import xml.etree.ElementTree as ET
 # ==================================================================================================== #
 # Third-Party Libraries
 # ---------------------------------------------------------------------------------------------------- #
-# Exactextract
-import exactextract
-# ---------------------------------------------------------------------------------------------------- #
 # Fiona
 import fiona
 # ---------------------------------------------------------------------------------------------------- #
@@ -88,7 +86,6 @@ import matplotlib.ticker as ticker
 # ---------------------------------------------------------------------------------------------------- #
 # Numpy
 import numpy as np
-import numpy.typing as npt
 # ---------------------------------------------------------------------------------------------------- #
 # Pandas
 import pandas as pd
@@ -100,8 +97,6 @@ from pyproj import CRS, Transformer
 import rasterio
 import rasterio.crs
 import rasterio.enums
-import rasterio.features
-import rasterio.io
 import rasterio.transform
 import rasterio.warp
 import rasterio.windows
@@ -110,7 +105,6 @@ from rasterio.enums import ColorInterp
 from rasterio.errors import NodataShadowWarning
 from rasterio.features import shapes
 from rasterio.mask import mask
-from rasterio.transform import from_bounds
 from rasterio.vrt import WarpedVRT
 from rasterio.warp import reproject, Resampling
 from rasterio.windows import Window
@@ -123,21 +117,13 @@ import scipy
 from scipy.constants import speed_of_light
 from scipy.ndimage import rotate as ndimage_rotate
 from scipy.signal import savgol_filter
-from scipy.spatial.distance import pdist, squareform, cdist
-from scipy.stats import chi2_contingency
+from scipy.spatial.distance import squareform, cdist
 # ---------------------------------------------------------------------------------------------------- #
 # segyio
 import segyio
 # ---------------------------------------------------------------------------------------------------- #
 # Shapely
-from shapely.geometry import shape, Point, LineString
-# ---------------------------------------------------------------------------------------------------- #
-# Sklearn
-from sklearn import set_config
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import cohen_kappa_score, classification_report, confusion_matrix, ConfusionMatrixDisplay
-from sklearn.model_selection import train_test_split
-from sklearn.utils.parallel import Parallel, delayed
+from shapely.geometry import Point, LineString
 # ---------------------------------------------------------------------------------------------------- #
 # Whitebox
 import whitebox
@@ -159,15 +145,13 @@ if "project_path" not in globals():
     coding_folder = Path(__file__).resolve().parent.parent
     data_folder = coding_folder / "data"
     results_folder = coding_folder / "results"
+    final_maps_folder = coding_folder / "map_generation" / "Final Maps"
     dtm_calculations_folder =  results_folder / "dtm_calculations"
     manual_input_folder = coding_folder / "manual_input_data"
-    if not manual_input_folder.exists():
-        raise FileNotFoundError("Manual input data not found.")
-    if not data_folder.exists():
-        raise FileNotFoundError("Data not found.")
 
     # Create Folders
     data_folder.mkdir(exist_ok = True)
+    final_maps_folder.mkdir(exist_ok = True, parents = True)
     results_folder.mkdir(exist_ok = True)
     dtm_calculations_folder.mkdir(exist_ok = True)
 

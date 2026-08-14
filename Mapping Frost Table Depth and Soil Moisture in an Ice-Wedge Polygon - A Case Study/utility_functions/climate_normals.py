@@ -11,11 +11,12 @@ climate_normals.py
 
 Utility functions for climate normals
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

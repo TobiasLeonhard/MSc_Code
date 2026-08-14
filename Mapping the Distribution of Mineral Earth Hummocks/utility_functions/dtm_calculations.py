@@ -24,6 +24,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent.parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

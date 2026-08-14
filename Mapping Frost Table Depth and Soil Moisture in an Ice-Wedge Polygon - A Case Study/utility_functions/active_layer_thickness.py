@@ -11,11 +11,12 @@ active_layer_thickness.py
 
 This file contains functions for handling the frost table/active layer thickness data
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

@@ -9,7 +9,10 @@
 """
 error_propagation_calculations.py
 
-This file contains the calcualations done to calculate the needed correlation length to explain the standard deviation from the TPI.
+This script estimates the propagation of error in Topographic Position Index calculations used for mineral earth hummock mapping.
+It evaluates the standard error of the mean for different analysis window sizes,
+incorporates assumed lidar error terms and correlation lengths, and determines the correlation length required to explain the observed TPI variability.
+The results provide a statistical basis for assessing the reliability of hummock mapping outputs and the appropriate spatial scales for analysis.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -24,6 +27,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.error_propagation_calculations import calculate_standard_error_of_mean_for_different_windows
 # ============================================================ #

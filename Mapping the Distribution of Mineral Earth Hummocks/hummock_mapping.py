@@ -9,8 +9,10 @@
 """
 hummock_mapping.py
 
-This file handles all hummock mapping processes.
-It creates different hummock maps using the DTM from the KBM LIDAR campaing 2024
+This script generates and evaluates mineral earth hummock maps from LiDAR-derived topographic data.
+It tests multiple mapping parameter combinations, filters mapped features by area,
+compares results against field validation data, and summarizes the performance of each configuration using standard accuracy metrics.
+The output supports selection of the most reliable hummock map for downstream analysis and interpretation.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -25,6 +27,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.hummock_mapping import map_hummocks, load_ground_validation_data, evaluate_mapping_results
 from utility_functions.python_to_latex import export_to_latex

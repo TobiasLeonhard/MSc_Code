@@ -24,7 +24,7 @@ from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
 from config.environment import *
-from utility_functions.gpr_handling import plot_iwp_transect_wise, plot_whole_iwp_side
+from utility_functions.gpr_handling_iwp_prj import plot_iwp_transect_wise, plot_whole_iwp_side
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 if __name__ == "__main__":

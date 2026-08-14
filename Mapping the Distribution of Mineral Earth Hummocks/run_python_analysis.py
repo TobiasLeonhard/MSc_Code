@@ -9,7 +9,9 @@
 """
 run_python_analysis.py
 
-This files runs all other python files in an order that ensures that all data is produced in time.
+This script runs the full analytical workflow for the mineral earth hummock mapping project by
+sequentially executing the climate, uncertainty, vegetation, topographic mapping, vegetation comparison, and GPR analysis scripts.
+It ensures that all intermediate and derived datasets are generated in a consistent order for reproducible analysis and interpretation.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
@@ -24,6 +26,7 @@ import sys
 from pathlib import Path
 parent_folder = Path(__file__).resolve().parent
 sys.path.append(str(parent_folder))
+from config.environment_hum_prj import *
 from config.environment import *
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

@@ -11,11 +11,12 @@ python_to_latex.py
 
 Utility functions to export pandas Data Frames to a custom LaTeX table format
 
-Author: Tobias Leander Leonhard
+Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
 Last Modified: 2026-08-06
+Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #
