@@ -33,7 +33,9 @@ if __name__ == "__main__":
 
     # List of files to run
     scripts = [
+        parent_folder / "Mapping the Distribution of Mineral Earth Hummocks" / Path("prepare_analysis_hum_prj").with_suffix(".py"),
         parent_folder / "Mapping the Distribution of Mineral Earth Hummocks" / Path("run_python_analysis").with_suffix(".py"),
+        parent_folder / "Mapping Frost Table Depth and Soil Moisture in an Ice-Wedge Polygon - A Case Study" / Path("prepare_analysis_iwp_prj").with_suffix(".py"),
         parent_folder / "Mapping Frost Table Depth and Soil Moisture in an Ice-Wedge Polygon - A Case Study" / Path("run_python_analysis").with_suffix(".py")
         ]
 

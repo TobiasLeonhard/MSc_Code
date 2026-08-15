@@ -34,7 +34,6 @@ if __name__ == "__main__":
 
     # List of files to run
     scripts = [
-        # "prepare_analysis_iwp_prj",
         "bulk_volumetric_soil_water_content_parameterization_comparison", "climate_normals",
         "trough_mapping", "gpr_analysis"
         ]
