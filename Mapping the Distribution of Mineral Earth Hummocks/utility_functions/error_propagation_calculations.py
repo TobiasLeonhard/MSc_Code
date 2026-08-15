@@ -9,13 +9,16 @@
 """
 error_propagation_calculations.py
 
-This file contains utility functions for the error propagation calculation
+Description:
+This module provides functions to estimate error propagation in DTM-derived analyses.
+It implements covariance models (exponential), calculates standard error of the mean for spatial windows, and evaluates cross-covariance between different analysis scales.
+These utilities support uncertainty quantification for topographic position index calculations and hummock mapping validation.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

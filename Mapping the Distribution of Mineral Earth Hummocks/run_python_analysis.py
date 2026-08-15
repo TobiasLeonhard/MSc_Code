@@ -9,6 +9,7 @@
 """
 run_python_analysis.py
 
+Description:
 This script runs the full analytical workflow for the mineral earth hummock mapping project by
 sequentially executing the climate, uncertainty, vegetation, topographic mapping, vegetation comparison, and GPR analysis scripts.
 It ensures that all intermediate and derived datasets are generated in a consistent order for reproducible analysis and interpretation.
@@ -17,7 +18,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -36,8 +37,9 @@ if __name__ == "__main__":
 
     # List of files to run
     scripts = [
-        "climate_normals", "error_propagation_calculations",
-        "vegetation_mapping", "hummock_mapping", "compare_hummock_mapping_with_vegetation_classification",
+        # "prepare_analysis_hum_prj",
+        "climate_normals", "error_propagation_calculations", "vegetation_mapping",
+        "hummock_mapping", "compare_hummock_mapping_with_vegetation_classification",
         "gpr_analysis"
         ]
 

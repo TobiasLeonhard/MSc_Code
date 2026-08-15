@@ -9,15 +9,16 @@
 """
 environment.py
 
-This configuration file establishes the computational environment for the mineral earth hummock mapping project.
-It imports required libraries, sets the project directory structure, initializes geospatial and plotting tools, and defines shared settings used by all downstream analysis scripts.
-The file ensures reproducibility and consistent access to data, results, and processing resources across the workflow.
+Description:
+This configuration module establishes the shared computational environment for the mineral earth hummock mapping project. 
+It imports standard and third-party libraries (numpy, pandas, rasterio, geopandas, matplotlib, scipy, whitebox, xarray, and others), defines project directory structure (data, results, DTM calculations folders), initializes geospatial and visualization tools, configures matplotlib settings (Times New Roman font, DPI=300), and applies global filters for warnings. 
+Ensures reproducibility and centralized access to resources across all downstream analysis scripts.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ==================================================================================================== #
@@ -31,9 +32,6 @@ from contextlib import ExitStack #
 # ---------------------------------------------------------------------------------------------------- #
 # Gc
 import gc
-# ---------------------------------------------------------------------------------------------------- #
-# Os
-import os
 # ---------------------------------------------------------------------------------------------------- #
 # Re
 import re
@@ -125,6 +123,9 @@ import segyio
 # Shapely
 from shapely.geometry import Point, LineString
 # ---------------------------------------------------------------------------------------------------- #
+# Sklearn
+from sklearn.metrics import cohen_kappa_score
+# ---------------------------------------------------------------------------------------------------- #
 # Whitebox
 import whitebox
 # ---------------------------------------------------------------------------------------------------- #
@@ -156,7 +157,6 @@ if "project_path" not in globals():
     dtm_calculations_folder.mkdir(exist_ok = True)
 
     # Filter warnings
-    os.environ["PYTHONWARNINGS"] = "ignore::UserWarning:sklearn.utils.parallel"
     warnings.filterwarnings("ignore", category = RuntimeWarning, message = ".*'Memory' driver is deprecated.*")
     warnings.filterwarnings("ignore", category = NodataShadowWarning)
 

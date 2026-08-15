@@ -9,6 +9,7 @@
 """
 compare_hummock_mapping_with_vegetation_classification.py
 
+Description:
 This script evaluates the relationship between mapped mineral earth hummocks and vegetation classes
 by combining hummock and vegetation rasters, comparing their spatial overlap, and calculating the proportion
 of each vegetation class within mapped hummock areas relative to the broader vegetation cover.
@@ -18,7 +19,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

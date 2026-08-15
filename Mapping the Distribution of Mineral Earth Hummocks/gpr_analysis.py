@@ -9,6 +9,7 @@
 """
 gpr_analysis.py
 
+Description:
 This script prepares and visualizes GPR reflection pick-line data alongside mapped mineral earth hummocks and aerial imagery.
 It overlays hummock maps with radar transects and produces figures for interpretation of hummock-related subsurface structure and moisture conditions.
 The resulting plots support comparison between topographic hummock mapping and ground-based geophysical observations.
@@ -17,7 +18,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

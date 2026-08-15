@@ -9,13 +9,16 @@
 """
 gpr_plotting.py
 
-This file contains functions for plotting GPR related data
+Description:
+This utility module provides comprehensive GPR data visualization and processing functions. 
+Functions include: plotting GPR radargrams with optional depth conversion, overlaying active layer thickness measurements, plotting elevation profiles with frozen/thawed layer classification, visualizing volumetric soil water content, adding topographic feature identification (hummocks/interhummocks), integrating orthomosaic backgrounds with transect traces, managing figure layouts and legends, converting geometry to coordinates for export, and generating publication-quality multi-panel GPR transect figures. 
+Supports dynamic figure sizing, coordinate transformation, data smoothing, and segment-based line geometry generation from point data.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

@@ -7,15 +7,18 @@
 # #       # #      # #     #   #####
 # Arctic Hydrology Research Group - Wilfrid Laurier University
 """
-gpr_processing.py
+gpr_processing_iwp_prj.py
 
-This file contains functions for processing GPR related data
+Description:
+This module integrates GPR, GNSS, and field measurements for ice-wedge polygon analysis.
+It loads radargrams with reflection picks, adds active layer measurements, calculates velocity-corrected frost table depths and volumetric soil water content using dielectric properties, and classifies subsurface moisture conditions.
+The module also aggregates multiple transect datasets into site-wide GeoDataFrames with consistent orientation and spatial reference, enabling comprehensive permafrost characterization.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

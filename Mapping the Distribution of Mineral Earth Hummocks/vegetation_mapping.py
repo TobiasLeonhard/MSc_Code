@@ -9,6 +9,7 @@
 """
 vegetation_mapping.py
 
+Description:
 This script produces a vegetation classification map for the study area using 2023 aerial imagery and
 training polygons from field-based vegetation surveys.
 It merges overlapping image products to a common resolution and projection, trains a Random Forest classifier, and
@@ -19,7 +20,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -32,6 +33,7 @@ from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.vegetation_mapping import VegetationClassifier
 from utility_functions.combine_tifs import get_combined_raster
+warnings.filterwarnings("ignore", message=".*`sklearn.utils.parallel.delayed` should be used with `sklearn.utils.parallel.Parallel`.*")
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 if __name__ == "__main__":

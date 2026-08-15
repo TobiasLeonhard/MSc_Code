@@ -9,6 +9,7 @@
 """
 hummock_mapping.py
 
+Description:
 This script generates and evaluates mineral earth hummock maps from LiDAR-derived topographic data.
 It tests multiple mapping parameter combinations, filters mapped features by area,
 compares results against field validation data, and summarizes the performance of each configuration using standard accuracy metrics.
@@ -18,7 +19,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

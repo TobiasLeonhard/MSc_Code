@@ -9,14 +9,16 @@
 """
 environment_iwp_prj.py
 
-This environment file imports and organizes all packages.
-Additionally, it defines paths for the project.
+Description:
+This configuration file establishes the computational environment for the ice-wedge polygon study.
+It imports required Python libraries including rioxarray for spatial data processing and scikit-posthocs for statistical testing, and defines project directory paths for input data, analysis results, maps, and manual validation layers.
+The configuration ensures consistent file access and environment setup across all analysis scripts in the ice-wedge polygon workflow.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ==================================================================================================== #
 # Standard Libraries
@@ -39,9 +41,6 @@ import rioxarray
 # ---------------------------------------------------------------------------------------------------- #
 # Scikit posthocs
 import scikit_posthocs as sp
-# ---------------------------------------------------------------------------------------------------- #
-# Sklearn
-from sklearn.metrics import cohen_kappa_score
 # ---------------------------------------------------------------------------------------------------- #
 # ==================================================================================================== #
 

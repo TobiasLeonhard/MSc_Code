@@ -9,13 +9,15 @@
 """
 active_layer_thickness.py
 
-This file contains functions for handling the frost table/active layer thickness data
+Description:
+This Python utility module processes field-measured active layer (frost table) depth data combined with Real-Time Kinematic (RTK) GNSS positioning data. 
+It transforms raw measurement data from multiple study sites into a structured geospatial dataset suitable for permafrost research analysis.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

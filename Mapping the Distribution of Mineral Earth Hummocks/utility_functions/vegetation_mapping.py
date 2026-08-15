@@ -9,13 +9,16 @@
 """
 vegetation_mapping.py
 
-This file contains the vegetation classifier class.
+Description:
+This module implements a Random Forest-based vegetation classifier for multi-class land cover mapping.
+ It loads polygon training data, detects and handles overlapping annotations, extracts pixel features from imagery, trains the classifier, and performs windowed predictions across the full scene.
+ The module generates classification reports, confusion matrices, and produces a raster vegetation map with associated metadata and validation metrics.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -27,6 +30,7 @@ sys.path.append(str(parent_folder))
 from config.environment_hum_prj import *
 from config.environment import *
 from utility_functions.python_to_latex import export_to_latex
+warnings.filterwarnings("ignore", message=".*`sklearn.utils.parallel.delayed` should be used with `sklearn.utils.parallel.Parallel`.*")
 # ============================================================ #
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 class VegetationClassifier:

@@ -9,14 +9,16 @@
 """
 trough_mapping.py
 
-This file handles all hummock mapping processes.
-It creates different hummock maps using the DTM from the KBM LIDAR campaing 2024
+Description:
+This script maps ice-wedge polygon troughs from LiDAR-derived topography.
+It calculates elevation differences from a moving-window mean, thresholds negative anomalies to identify topographic lows, vectorizes the result into polygons, filters by minimum area, and clips to the study site boundary.
+Both vector and raster trough products are generated for integration with GPR and frost table analysis.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

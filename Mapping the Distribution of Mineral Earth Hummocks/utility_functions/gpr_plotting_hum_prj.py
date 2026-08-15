@@ -7,15 +7,18 @@
 # #       # #      # #     #   #####
 # Arctic Hydrology Research Group - Wilfrid Laurier University
 """
-gpr_plotting.py
+gpr_plotting_hum_prj.py
 
-This file contains functions for plotting GPR related data
+Description:
+This module generates publication-ready figures for GPR transects with integrated spatial context.
+It combines radargram visualizations with mapped hummock polygons and aerial imagery, identifies hummock-related reflections, and exports high-resolution plots and transect data.
+The module supports multi-panel layouts with coordinated legends and enables geophysical validation of topographic hummock mapping.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

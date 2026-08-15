@@ -9,13 +9,16 @@
 """
 general.py
 
-This file contains functions used from different functions.
+Description:
+This utility module provides reusable helper functions for data processing across the project. 
+Functions include: time format conversion (HHMMSS.SS to HH:MM:SS), dynamic column type adjustment for DataFrames and GeoDataFrames, coordinate conversion (DMM to decimal degrees), and distance calculation from transect start points based on study site control points. 
+Supports flexible data type casting including WKT geometry parsing for GeoDataFrames while preserving CRS information.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

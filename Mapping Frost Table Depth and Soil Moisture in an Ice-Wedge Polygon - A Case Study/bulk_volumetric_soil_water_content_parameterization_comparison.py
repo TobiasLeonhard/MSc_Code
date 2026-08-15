@@ -9,13 +9,15 @@
 """
 bulk_volumetric_soil_water_content_parameterization_comparison.py
 
-Compares the Topp et al. (1980) and the Nieslen and Thomsen (2023) parameterizations
+Description:
+This script compares two empirical parameterizations for converting relative electric permittivity to volumetric soil water content.
+It plots the Topp et al. (1980) and Nielsen & Thomsen (2023) polynomials to visualize differences in soil moisture estimation from GPR-derived dielectric properties, supporting methodological assessment of GPR-based hydrological measurements.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

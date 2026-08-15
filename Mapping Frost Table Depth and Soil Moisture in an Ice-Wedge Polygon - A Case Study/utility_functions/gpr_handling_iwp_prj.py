@@ -9,13 +9,16 @@
 """
 gpr_handling_iwp_prj.py
 
-This file handles the GPR processing for easier reading.
+Description:
+This module orchestrates GPR transect processing and multi-scale visualization for ice-wedge polygon analysis.
+It loads radargrams with velocity-based moisture classification, generates transect-scale and site-wide figures with overlaid spatial data, extracts frost table depth and soil water content, and performs non-parametric statistical tests (Kruskal-Wallis, Dunn's post-hoc, Mann-Whitney U) to compare conditions across polygon zones.
+Results are compiled into publication-ready tables supporting permafrost hydrothermal interpretation.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

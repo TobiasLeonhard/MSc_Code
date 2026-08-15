@@ -9,6 +9,7 @@
 """
 environment_hum_prj.py
 
+Description:
 This configuration file establishes the computational environment for the mineral earth hummock mapping project.
 It imports required libraries, sets the project directory structure, initializes geospatial and plotting tools, and defines shared settings used by all downstream analysis scripts.
 The file ensures reproducibility and consistent access to data, results, and processing resources across the workflow.
@@ -17,11 +18,14 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ==================================================================================================== #
 # Standard Libraries
+# ---------------------------------------------------------------------------------------------------- #
+# OS
+import os
 # ---------------------------------------------------------------------------------------------------- #
 # Sys
 import sys
@@ -31,6 +35,9 @@ from pathlib import Path
 # ---------------------------------------------------------------------------------------------------- #
 # Shutil
 import shutil
+# ---------------------------------------------------------------------------------------------------- #
+# Warnings
+import warnings
 # ---------------------------------------------------------------------------------------------------- #
 
 # ==================================================================================================== #
@@ -86,4 +93,7 @@ if "project_path" not in globals():
     results_folder.mkdir(exist_ok = True)
     dtm_calculations_folder.mkdir(exist_ok = True)
 
+    # Filter warnings
+    os.environ["PYTHONWARNINGS"] = "ignore::UserWarning:sklearn.utils.parallel"
+    warnings.filterwarnings("ignore", message=".*`sklearn.utils.parallel.delayed` should be used with `sklearn.utils.parallel.Parallel`.*")
 # ==================================================================================================== #

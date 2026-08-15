@@ -9,13 +9,16 @@
 """
 gpr_analysis.py
 
-This file organizes the GPR analysis
+Description:
+This script orchestrates GPR transect visualization and interpretation for the ice-wedge polygon study site.
+It loads radargram data with multiple velocity models to estimate soil moisture conditions, classifies subsurface reflections as wet, moist, or dry based on dielectric thresholds, and generates both transect-scale and site-scale figures with mapped troughs and aerial imagery.
+The module supports integrated geophysical and spatial interpretation of permafrost ground conditions and surface microtopography.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

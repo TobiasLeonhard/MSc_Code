@@ -9,13 +9,16 @@
 """
 geo_vector_file_operations.py
 
-Utility functions for handling and creating geo vector files ('.gpkg').
+Description:
+This module provides utilities for converting raster data to vector polygon geometries.
+It supports configurable connectivity types for shape generation, memory-efficient streaming for large datasets, and filtering to extract only specified feature values.
+The module enables conversion of binary raster masks (e.g., hummock maps) into polygon layers for spatial analysis and validation.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 

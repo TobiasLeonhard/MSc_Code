@@ -9,13 +9,16 @@
 """
 hummock_mapping.py
 
-Utility functions for mapping hummocks.
+Description:
+This module implements the core hummock mapping algorithm and validation workflows.
+It generates topographic position index products, applies statistical thresholding to identify hummock candidates, filters features by area and slope constraints, and validates mapped results against field-based ground truth using spatial matching and confusion matrix metrics.
+The module produces both vector and raster hummock products and enables parametric sensitivity analysis.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

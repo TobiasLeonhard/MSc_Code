@@ -9,13 +9,16 @@
 """
 prepare_analysis_hum_prj.py
 
-This script prepares the project by moving the data from downloaded repositories to the correct locations.
+Description:
+This script organizes project data by copying input files from downloaded repositories to their designated project directories.
+It manages meteorological data, aerial imagery, LiDAR products, field measurements, GPR survey data, and utility functions, ensuring the correct file structure for downstream analysis workflows.
+This setup script enables reproducible project initialization and data staging
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-13
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -223,6 +226,62 @@ if __name__ == "__main__":
             "dst_name": "S_500MHZ_SIKSIK-UPPER-6_S-E_H_02.dat",
             "TBD": True
             },
+        "GP2 Lower 2": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Lower-2_E-C.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Lower-2_E-C.gp2",
+            "TBD": True
+            },
+        "GP2 Middle 1": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Middle-1_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Middle-1_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 Middle 9": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Middle-9_E-S.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Middle-9_E-S.gp2",
+            "TBD": True
+            },
+        "GP2 Upper 6": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Upper-6_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Upper-6_S-E.gp2",
+            "TBD": True
+            },
+        "HD Lower 2": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Lower-2_E-C.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Lower-2_E-C.hd",
+            "TBD": True
+            },
+        "HD Middle 1": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Middle-1_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Middle-1_S-E.hd",
+            "TBD": True
+            },
+        "HD Middle 9": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Middle-9_E-S.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Middle-9_E-S.hd",
+            "TBD": True
+            },
+        "HD Upper 6": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_Siksik-Upper-6_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_Siksik-Upper-6_S-E.hd",
+            "TBD": True
+            },
     # Utility Function data
         "Dempster Highway Location": {
             "folders": ["doi-tbd", "utility functions"],
@@ -287,6 +346,13 @@ if __name__ == "__main__":
             "dst_name": "Tuktoyaktuk.gpkg",
             "TBD": True
             },
+        "Siksik-Transects Location": {
+            "folders": ["doi-tbd", "utility functions"],
+            "src": "Siksik-Transects.txt",
+            "dst_dir": coding_folder / "map_generation" / "Layer Data",
+            "dst_name": "Siksik-Transects.txt",
+            "TBD": True
+            },
         "Active Layer Thickness Python": {
             "folders": ["doi-tbd", "utility functions"],
             "src": "active_layer_thickness.py",
@@ -296,7 +362,7 @@ if __name__ == "__main__":
             },
         "Climate Normals Sub Python": {
             "folders": ["doi-tbd", "utility functions"],
-            "src": "climate_normals.py",
+            "src": "climate_normals_utility.py",
             "dst_dir": coding_folder / "utility_functions",
             "dst_name": "climate_normals.py",
             "TBD": True

@@ -9,13 +9,16 @@
 """
 climate_normals.py
 
-Utility functions for climate normals
+Description:
+This utility module provides helper functions for processing climate data. 
+It includes functions to flatten multi-level DataFrame column hierarchies, intelligently rename aggregated climate variables (temperature, precipitation) with statistical descriptors (mean, min, max, sum), and load gap-filled meteorological data from Trail Valley Creek. 
+The functions support data aggregation workflows and column naming conventions used throughout the climate analysis pipeline.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

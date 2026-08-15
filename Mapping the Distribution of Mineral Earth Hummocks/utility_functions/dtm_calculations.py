@@ -9,13 +9,16 @@
 """
 utils_dtm_calculations.py
 
-Functions for DTM calculations.
+Description:
+This module provides utility functions for deriving topographic products from the LiDAR DTM.
+It implements functions to calculate mean elevation via moving-window filtering, compute elevation differences between smoothed DTMs at different scales, generate thresholded maps for feature detection, and compute slope in multiple units.
+These derived products support topographic position index calculations and hummock mapping workflows.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

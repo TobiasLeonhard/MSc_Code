@@ -9,13 +9,16 @@
 """
 gpr_handling_hum_prj.py
 
-This file handles the GPR processing for easier reading.
+Description:
+This module orchestrates the visualization of GPR transects with spatial data overlays.
+It loads radargram data, geographic control points, and raster layers, then generates figures showing hummock detection signatures in ground-penetrating radar profiles aligned with corresponding aerial and topographic imagery.
+The module supports selective filtering of transects by frequency and orientation for focused geophysical interpretation.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

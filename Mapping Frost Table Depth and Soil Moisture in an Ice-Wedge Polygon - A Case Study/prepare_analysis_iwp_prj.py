@@ -9,13 +9,16 @@
 """
 prepare_analysis_iwp_prj.py
 
-This script prepares the project by moving the data from downloaded repositories to the correct locations.
+Description:
+This script organizes project data by copying input files from downloaded repositories to their designated project directories.
+It manages meteorological data, aerial imagery, LiDAR products, field measurements, nine GPR survey transects with radargrams and reflection pick lines, and utility functions, ensuring the correct file structure for downstream ice-wedge polygon analysis workflows.
+This setup script enables reproducible project initialization and data staging.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-13
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -265,6 +268,132 @@ if __name__ == "__main__":
             "dst_name": "S_500MHZ_IWP-9-1_E-S.PCK",
             "TBD": True
             },
+        "GP2 IWP 1-2": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-1-2_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-1-2_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 2-3": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-2-3_E-S.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-2-3_E-S.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 3-4": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-3-4_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-3-4_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 4-5": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-4-5_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-4-5_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 5-6": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-5-6_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-5-6_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 6-7": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-6-7_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-6-7_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 7-8": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-7-8_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-7-8_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 8-9": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-8-9_S-E.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-8-9_S-E.gp2",
+            "TBD": True
+            },
+        "GP2 IWP 9-1": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-9-1_E-S.gp2",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-9-1_E-S.gp2",
+            "TBD": True
+            },
+        "HD IWP 1-2": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-1-2_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-1-2_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 2-3": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-2-3_E-S.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-2-3_E-S.hd",
+            "TBD": True
+            },
+        "HD IWP 3-4": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-3-4_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-3-4_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 4-5": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-4-5_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-4-5_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 5-6": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-5-6_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-5-6_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 6-7": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-6-7_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-6-7_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 7-8": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-7-8_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-7-8_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 8-9": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-8-9_S-E.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-8-9_S-E.hd",
+            "TBD": True
+            },
+        "HD IWP 9-1": {
+            "folders": ["doi-tbd", "gpr survey"],
+            "src": "S_500MHz_IWP-9-1_E-S.hd",
+            "dst_dir": manual_input_folder / "gpr_analysis" / "GNSS_Info",
+            "dst_name": "S_500MHz_IWP-9-1_E-S.hd",
+            "TBD": True
+            },
     # Utility Function data
         "Dempster Highway Location": {
             "folders": ["doi-tbd", "utility functions"],
@@ -329,6 +458,20 @@ if __name__ == "__main__":
             "dst_name": "Tuktoyaktuk.gpkg",
             "TBD": True
             },
+        "IWP-Transects Location": {
+            "folders": ["doi-tbd", "utility functions"],
+            "src": "IWP-Transects.txt",
+            "dst_dir": coding_folder / "map_generation" / "Layer Data",
+            "dst_name": "IWP-Transects.txt",
+            "TBD": True
+            },
+        "Transect-Points Location": {
+            "folders": ["doi-tbd", "utility functions"],
+            "src": "Transect-Points.txt",
+            "dst_dir": coding_folder / "map_generation" / "Layer Data",
+            "dst_name": "Transect-Points.txt",
+            "TBD": True
+            },
         "Active Layer Thickness Python": {
             "folders": ["doi-tbd", "utility functions"],
             "src": "active_layer_thickness.py",
@@ -338,7 +481,7 @@ if __name__ == "__main__":
             },
         "Climate Normals Sub Python": {
             "folders": ["doi-tbd", "utility functions"],
-            "src": "climate_normals.py",
+            "src": "climate_normals_utility.py",
             "dst_dir": coding_folder / "utility_functions",
             "dst_name": "climate_normals.py",
             "TBD": True

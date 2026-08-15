@@ -9,13 +9,15 @@
 """
 run_python_analysis.py
 
-This files runs all other python files in an order that ensures that all data is produced in time.
+Description:
+This script orchestrates the full analytical workflow for the ice-wedge polygon study by sequentially executing soil moisture parameterization comparison, climate normalization, trough mapping, and GPR analysis scripts.
+It ensures that all intermediate and derived datasets are generated in a consistent order for reproducible interpretation of permafrost thermal and hydrological conditions.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #
@@ -32,6 +34,7 @@ if __name__ == "__main__":
 
     # List of files to run
     scripts = [
+        # "prepare_analysis_iwp_prj",
         "bulk_volumetric_soil_water_content_parameterization_comparison", "climate_normals",
         "trough_mapping", "gpr_analysis"
         ]

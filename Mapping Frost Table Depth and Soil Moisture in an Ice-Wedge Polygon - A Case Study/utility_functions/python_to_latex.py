@@ -9,13 +9,16 @@
 """
 python_to_latex.py
 
-Utility functions to export pandas Data Frames to a custom LaTeX table format
+Description:
+This utility module provides a custom function to export pandas DataFrames to formatted LaTeX table code. 
+Supports configurable precision per row or column, customizable captions (short and long forms), table labels, float placement specifiers, and cell formatting using \makecell. 
+Generates publication-ready LaTeX tables with booktabs formatting (toprule, midrule, bottomrule) and proper indentation for readability in source documents.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

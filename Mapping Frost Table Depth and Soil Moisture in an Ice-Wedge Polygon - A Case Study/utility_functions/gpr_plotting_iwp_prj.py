@@ -9,13 +9,16 @@
 """
 gpr_plotting.py
 
-This file contains functions for plotting GPR related data
+Description:
+This module generates publication-ready figures for ice-wedge polygon GPR transects and site-wide analysis.
+It produces multi-panel transect plots integrating radargrams, velocity-corrected depths, volumetric soil water content, active layer measurements, and aerial imagery; generates focused subtransect visualizations; and creates site-wide maps overlaying frost table depth and soil moisture across multiple transects.
+The module enables comprehensive geophysical interpretation of permafrost hydrothermal conditions at landscape scales.
 
 Author: Tobias Leander Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 # ============================================================ #

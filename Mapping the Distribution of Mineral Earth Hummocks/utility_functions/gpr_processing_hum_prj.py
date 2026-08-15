@@ -7,15 +7,18 @@
 # #       # #      # #     #   #####
 # Arctic Hydrology Research Group - Wilfrid Laurier University
 """
-gpr_processing.py
+gpr_processing_hum_prj.py
 
-This file contains functions for processing GPR related data
+Description:
+This module processes GPR transect data and performs validation against mapped hummocks.
+It loads and integrates radargrams with GNSS positioning and spatial raster data, applies GPR-based hummock identification through reflection pick lines, and compares results with LiDAR-derived hummock maps using precision, recall, F1-score, and Cohen's Kappa metrics.
+The module supports geophysical validation of topographic mapping approaches.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

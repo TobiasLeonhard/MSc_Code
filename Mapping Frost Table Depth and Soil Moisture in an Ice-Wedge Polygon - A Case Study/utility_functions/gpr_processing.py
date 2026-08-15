@@ -9,13 +9,16 @@
 """
 gpr_processing.py
 
-This file contains functions for processing GPR related data
+Description:
+This utility module provides comprehensive GPR data processing and integration functions for combining GPR, GPS, orthomosaic, and active layer measurements.
+Functions include: loading SEG-Y GPR traces with sample timing, managing transect cropping via metadata files, loading and correcting GNSS survey data, integrating orthomosaic backgrounds with transect-relative coordinate transformation and rotation, extracting raster values at point locations, calculating ground velocities from active layer and reflection picks, computing frost table depths and volumetric soil water content using dielectric permittivity relationships, classifying soil conditions by threshold-based analysis, and adding surface topography corrections to GPR traces.
+Supports spatial CRS transformations, Savitzky-Golay filtering, and multi-band raster processing.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -188,7 +191,7 @@ def load_gnss_data(epsg_code: int = 3155) -> gpd.GeoDataFrame:
     if gnss_data_file.exists():
         gnss_data = gpd.read_parquet(gnss_data_file)
     else:
-        import_folder = coding_folder / "gpr_analysis" / "ASCII" / "Import"
+        import_folder = coding_folder / "manual_input_data" / "gpr_analysis" / "GNSS_Info"
         gp2_files = list(import_folder.rglob("*.gp2"))
 
         gp2_collector = []

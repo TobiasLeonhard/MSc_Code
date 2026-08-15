@@ -9,18 +9,17 @@
 """
 combine_tifs.py
 
-Utility functions for combining tif files.
-This module provides a function to stack multiple rasters into a single multi-band raster, ensuring they are all in the same CRS, resolution, and aligned to the same grid.
-It also includes a wrapper function that defines the output path and checks for existing files before creating a new combined raster.'
-It is sufficient to call the wrapper function `get_combined_raster` for most use cases, which will handle the output path and file existence checks automatically.
-
-Needed packages: rasterio, numpy, pathlib, contextlib.
+Description:
+This utility module provides functions to stack multiple rasters into a single aligned multi-band GeoTIFF. 
+It handles coordinate reference system (CRS) transformation, resolution harmonization (lowest/highest/average), spatial alignment, and optional overlap filtering to remove NoData areas. 
+Features include configurable resampling methods per raster, band selection, automatic resolution detection, and buffer management. 
+The wrapper function get_combined_raster() manages output paths, file existence checks, and generates descriptive filenames based on processing parameters. 
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

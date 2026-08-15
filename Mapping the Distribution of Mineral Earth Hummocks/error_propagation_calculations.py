@@ -9,6 +9,7 @@
 """
 error_propagation_calculations.py
 
+Description:
 This script estimates the propagation of error in Topographic Position Index calculations used for mineral earth hummock mapping.
 It evaluates the standard error of the mean for different analysis window sizes,
 incorporates assumed lidar error terms and correlation lengths, and determines the correlation length required to explain the observed TPI variability.
@@ -18,7 +19,7 @@ Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2025
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #

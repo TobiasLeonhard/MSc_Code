@@ -9,13 +9,16 @@
 """
 gnss_handling.py
 
-This file contains functions for handling gnss data
+Description:
+This utility module provides comprehensive GNSS data processing functions for field measurements. 
+Functions include: loading KML waypoint data, parsing GP2 format GPS/survey data with coordinate conversion (DDM to decimal degrees, WGS84 to UTM), filling missing survey traces via linear interpolation, loading control points for transect reference, extracting transect geometry information from file names, and correcting GNSS trajectories using RTK control points with interpolated offsets. 
+Supports multiple coordinate systems and integrates GNSS positioning with elevation data for survey applications.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
 Research Group: Arctic Hydrology Research Group (AHRG), Wilfrid Laurier University
 Created: 2026
-Last Modified: 2026-08-06
+Last Modified: 2026-08-14
 Version: 1.0
 """
 # ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
