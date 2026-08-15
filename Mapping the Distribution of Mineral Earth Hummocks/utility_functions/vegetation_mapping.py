@@ -11,8 +11,8 @@ vegetation_mapping.py
 
 Description:
 This module implements a Random Forest-based vegetation classifier for multi-class land cover mapping.
- It loads polygon training data, detects and handles overlapping annotations, extracts pixel features from imagery, trains the classifier, and performs windowed predictions across the full scene.
- The module generates classification reports, confusion matrices, and produces a raster vegetation map with associated metadata and validation metrics.
+It loads polygon training data, detects and handles overlapping annotations, extracts pixel features from imagery, trains the classifier, and performs windowed predictions across the full scene.
+The module generates classification reports, confusion matrices, and produces a raster vegetation map with associated metadata and validation metrics.
 
 Author: Tobias Leonhard
 Project: MSc Thesis
